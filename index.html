@@ -21,13 +21,13 @@ overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 
 header{
 position:fixed;
 top:0;
 width:100%;
-background:#ffffff;
+background:#fff;
 padding:20px 40px;
 display:flex;
 flex-direction:column;
@@ -54,14 +54,13 @@ nav ul li a{
 text-decoration:none;
 color:#333;
 font-weight:600;
-cursor:pointer;
 }
 
 nav ul li a:hover{
 color:#1e73be;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 
 .hero{
 margin-top:170px;
@@ -111,7 +110,7 @@ border-radius:30px;
 font-weight:bold;
 }
 
-/* ===== SERVIÇOS ===== */
+/* SERVIÇOS */
 
 .section{
 padding:80px 20px;
@@ -164,10 +163,10 @@ cursor:pointer;
 font-weight:bold;
 }
 
-/* ===== SOBRE ===== */
+/* SOBRE */
 
 .sobre{
-background:#ffffff;
+background:#fff;
 padding:80px 20px;
 text-align:center;
 }
@@ -184,7 +183,7 @@ font-weight:bold;
 color:#1e73be;
 }
 
-/* ===== CONTATO ===== */
+/* CONTATO */
 
 .contato{
 padding:80px 20px;
@@ -203,12 +202,11 @@ input, textarea{
 padding:12px;
 border-radius:8px;
 border:1px solid #ccc;
-font-size:14px;
 }
 
 textarea{
-resize:none;
 height:120px;
+resize:none;
 }
 
 form button{
@@ -221,7 +219,7 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* ===== RESPONSIVO ===== */
+/* RESPONSIVO */
 
 @media(max-width:768px){
 
@@ -253,7 +251,7 @@ width:90%;
 <header>
 
 <div class="logo">
-<img src="images/logo-imovcare.png">
+<img src="logo-imovcare.png">
 </div>
 
 <nav>
@@ -268,11 +266,13 @@ width:90%;
 </header>
 
 <section class="hero" id="hero">
+
 <div class="hero-content">
 <h1>Gestão Imobiliária com Transparência e Segurança</h1>
 <p>Protegendo e valorizando o patrimônio dos nossos clientes com responsabilidade e eficiência.</p>
-<a class="btn" href="https://wa.me/5511999999999" target="_blank">Solicitar Atendimento</a>
+<a class="btn" href="https://wa.me/5511956474895" target="_blank">Solicitar Atendimento</a>
 </div>
+
 </section>
 
 <section class="section" id="servicos">
@@ -330,11 +330,12 @@ A Imovcare foi criada pensando em oferecer comodidade e segurança para propriet
 <script>
 
 /* SLIDER */
+
 const imagens = [
-"images/slide1.jpg",
-"images/slide2.jpg",
-"images/slide3.jpg",
-"images/slide4.jpg"
+"slide1.jpg",
+"slide2.jpg",
+"slide3.jpg",
+"slide4.jpg"
 ];
 
 let i = 0;
@@ -348,20 +349,18 @@ i = (i + 1) % imagens.length;
 trocarImagem();
 setInterval(trocarImagem, 4000);
 
-/* WHATSAPP SERVIÇOS */
+/* WHATSAPP */
 
 function enviarZap(servico){
-let numero = "5511999999999";
+let numero = "5511956474895";
 let mensagem = `Olá, gostaria de informações sobre ${servico}`;
 window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
 }
 
-/* FORMULÁRIO CONTATO */
-
 function enviarFormulario(e){
 e.preventDefault();
 
-let numero = "5511965624711";
+let numero = "5511956474895";
 let nome = document.getElementById("nome").value;
 let email = document.getElementById("email").value;
 let mensagem = document.getElementById("mensagem").value;
