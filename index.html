@@ -1,377 +1,144 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imovcare Gestão Imobiliária</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
-
-body{
-background:#f4f6f8;
-color:#333;
-overflow-x:hidden;
-scroll-behavior:smooth;
-}
-
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-width:100%;
-background:#fff;
-padding:20px 40px;
-display:flex;
-flex-direction:column;
-align-items:center;
-z-index:1000;
-box-shadow:0 2px 12px rgba(0,0,0,0.08);
-}
-
-.logo img{
-width:220px;
-}
-
-nav{
-margin-top:15px;
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav ul li a{
-text-decoration:none;
-color:#333;
-font-weight:600;
-}
-
-nav ul li a:hover{
-color:#1e73be;
-}
-
-/* HERO */
-
-.hero{
-margin-top:170px;
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-transition:background-image 1s ease-in-out;
-position:relative;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.35);
-}
-
-.hero-content{
-position:relative;
-color:#fff;
-max-width:800px;
-padding:20px;
-}
-
-.hero-content h1{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.hero-content p{
-font-size:18px;
-margin-bottom:30px;
-}
-
-.btn{
-display:inline-block;
-padding:14px 30px;
-background:#1e73be;
-color:#fff;
-text-decoration:none;
-border-radius:30px;
-font-weight:bold;
-}
-
-/* SERVIÇOS */
-
-.section{
-padding:80px 20px;
-text-align:center;
-}
-
-.section h2{
-font-size:34px;
-margin-bottom:50px;
-color:#1e73be;
-}
-
-.cards{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.card{
-background:#fff;
-width:280px;
-padding:30px;
-border-radius:14px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-.card h3{
-margin-bottom:15px;
-color:#1e73be;
-}
-
-.card p{
-font-size:15px;
-margin-bottom:20px;
-}
-
-.card button{
-background:#25D366;
-color:#fff;
-border:none;
-padding:10px 20px;
-border-radius:20px;
-cursor:pointer;
-font-weight:bold;
-}
-
-/* SOBRE */
-
-.sobre{
-background:#fff;
-padding:80px 20px;
-text-align:center;
-}
-
-.sobre p{
-max-width:850px;
-margin:auto;
-line-height:1.7;
-}
-
-.creci{
-margin-top:20px;
-font-weight:bold;
-color:#1e73be;
-}
-
-/* CONTATO */
-
-.contato{
-padding:80px 20px;
-text-align:center;
-}
-
-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input, textarea{
-padding:12px;
-border-radius:8px;
-border:1px solid #ccc;
-}
-
-textarea{
-height:120px;
-resize:none;
-}
-
-form button{
-background:#1e73be;
-color:#fff;
-border:none;
-padding:12px;
-border-radius:25px;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-nav ul{
-flex-direction:column;
-gap:15px;
-}
-
-.hero-content h1{
-font-size:28px;
-}
-
-.cards{
-flex-direction:column;
-align-items:center;
-}
-
-.card{
-width:90%;
-}
-
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImovCare | Gestão e Manutenção de Imóveis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .title { font-family: 'Playfair Display', serif; }
+    .gold { color: #D4AF37; }
+    .bg-gold { background: linear-gradient(90deg,#caa53a,#f0d36a); }
+    .line { height:1px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); }
+  </style>
 </head>
+<body class="bg-neutral-950 text-neutral-200">
 
-<body>
+  <!-- HERO COM IMAGEM -->
+  <section class="min-h-screen flex items-center justify-center px-6 py-16 bg-cover bg-center" style="background-image:url('hero-imovel.jpg')">
+    <div class="bg-black/70 p-10 rounded-3xl max-w-5xl w-full text-center backdrop-blur">
+      <img src="logo-imovcare.png" class="mx-auto mb-6 w-28" alt="ImovCare Logo">
+      <h1 class="title text-5xl md:text-6xl gold mb-2">IMOVCARE</h1>
+      <p class="text-neutral-300 mb-6">Cuidando do seu imóvel</p>
+      <div class="line my-8"></div>
+      <h2 class="title text-3xl md:text-4xl mb-3">Gestão Imobiliária Premium</h2>
+      <p class="text-neutral-300 max-w-2xl mx-auto">
+        Da locação à manutenção completa, oferecemos soluções integradas com estratégia, segurança e transparência.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/5511965624711" class="bg-gold text-black font-semibold px-6 py-3 rounded-2xl shadow-lg">
+          Falar no WhatsApp
+        </a>
+        <a href="#servicos" class="border border-neutral-700 px-6 py-3 rounded-2xl">
+          Ver Serviços
+        </a>
+      </div>
+    </div>
+  </section>
 
-<header>
+  <!-- SERVIÇOS PEQUENOS REPAROS -->
+  <section id="servicos" class="px-6 py-16 bg-neutral-900">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="title text-3xl gold text-center mb-6">Pequenos Reparos Residenciais</h3>
+      <img src="manutencao-1.png" class="rounded-2xl mb-10 w-full" alt="Pequenos Reparos">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl border border-neutral-800">
+          <h4 class="text-xl mb-2">Reparos Elétricos Básicos</h4>
+        </div>
+        <div class="p-6 rounded-2xl border border-neutral-800">
+          <h4 class="text-xl mb-2">Troca de Lâmpadas e Interruptores</h4>
+        </div>
+        <div class="p-6 rounded-2xl border border-neutral-800">
+          <h4 class="text-xl mb-2">Ajustes de Portas e Fechaduras</h4>
+        </div>
+        <div class="p-6 rounded-2xl border border-neutral-800">
+          <h4 class="text-xl mb-2">Pequenos Reparos de Pintura</h4>
+        </div>
+        <div class="p-6 rounded-2xl border border-neutral-800">
+          <h4 class="text-xl mb-2">Instalação de Acessórios</h4>
+        </div>
+        <div class="p-6 rounded-2xl border border-neutral-800">
+          <h4 class="text-xl mb-2">Vedação e Silicone</h4>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="logo">
-<img src="logo-imovcare.png">
-</div>
+  <!-- GALERIA DE REPAROS -->
+  <section class="px-6 py-16">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="title text-3xl gold text-center mb-10">Alguns Trabalhos Realizados</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <img src="manutencao-1.png" class="rounded-2xl" alt="Reparo 1">
+        <img src="manutencao-2.png" class="rounded-2xl" alt="Reparo 2">
+      </div>
+    </div>
+  </section>
 
-<nav>
-<ul>
-<li><a href="#">Início</a></li>
-<li><a href="#servicos">Serviços</a></li>
-<li><a href="#sobre">Sobre</a></li>
-<li><a href="#contato">Contato</a></li>
-</ul>
-</nav>
+  <!-- CTA -->
+  <section class="px-6 py-16 bg-neutral-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="title text-3xl gold mb-4">Atendimento Personalizado</h3>
+      <p class="text-neutral-400 mb-6">Fale agora ou agende uma visita.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/5511965624711" class="bg-gold text-black font-semibold px-8 py-4 rounded-2xl shadow-xl">
+          Falar no WhatsApp
+        </a>
+        <a href="#agendar" class="border border-neutral-700 px-8 py-4 rounded-2xl">
+          Agendar Visita
+        </a>
+      </div>
+    </div>
+  </section>
 
-</header>
+  <!-- FORM AGENDAR -->
+  <section id="agendar" class="px-6 py-16">
+    <div class="max-w-3xl mx-auto bg-neutral-900 p-8 rounded-3xl border border-neutral-800">
+      <h3 class="title text-3xl gold text-center mb-6">Agendar Visita</h3>
+      <form id="formAgendar" class="grid md:grid-cols-2 gap-4">
+        <input required id="nome" type="text" placeholder="Nome" class="p-3 rounded-xl bg-neutral-800 border border-neutral-700">
+        <input required id="telefone" type="tel" placeholder="Telefone" class="p-3 rounded-xl bg-neutral-800 border border-neutral-700">
+        <input id="email" type="email" placeholder="Email" class="p-3 rounded-xl bg-neutral-800 border border-neutral-700 md:col-span-2">
+        <input required id="data" type="date" class="p-3 rounded-xl bg-neutral-800 border border-neutral-700">
+        <input id="imovel" type="text" placeholder="Imóvel de Interesse" class="p-3 rounded-xl bg-neutral-800 border border-neutral-700">
+        <textarea id="mensagem" placeholder="Observações" class="p-3 rounded-xl bg-neutral-800 border border-neutral-700 md:col-span-2"></textarea>
+        <button type="submit" class="bg-gold text-black font-semibold px-6 py-3 rounded-2xl md:col-span-2">
+          Enviar e Falar no WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
 
-<section class="hero" id="hero">
+  <script>
+    document.getElementById('formAgendar').addEventListener('submit', function(e){
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const email = document.getElementById('email').value;
+      const data = document.getElementById('data').value;
+      const imovel = document.getElementById('imovel').value;
+      const obs = document.getElementById('mensagem').value;
+      const msg = `Olá, gostaria de agendar uma visita.
 
-<div class="hero-content">
-<h1>Gestão Imobiliária com Transparência e Segurança</h1>
-<p>Protegendo e valorizando o patrimônio dos nossos clientes com responsabilidade e eficiência.</p>
-<a class="btn" href="https://wa.me/5511965624711" target="_blank">Solicitar Atendimento</a>
-</div>
+Nome: ${nome}
+Telefone: ${telefone}
+Email: ${email}
+Data: ${data}
+Imóvel: ${imovel}
+Observações: ${obs}`;
+      const url = 'https://wa.me/5511965624711?text=' + encodeURIComponent(msg);
+      window.open(url, '_blank');
+    });
+  </script>
 
-</section>
-
-<section class="section" id="servicos">
-<h2>Nossos Serviços</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>Manutenção Preventiva e Corretiva do Imóvel</h3>
-<p>Serviços especializados para garantir segurança e conservação.</p>
-<button onclick="enviarZap('Manutenção Preventiva e Corretiva')">Solicitar</button>
-</div>
-
-<div class="card">
-<h3>Chaveiro 24h</h3>
-<p>Atendimento ágil para emergências.</p>
-<button onclick="enviarZap('Chaveiro 24h')">Solicitar</button>
-</div>
-
-<div class="card">
-<h3>Locação e Conservação de Imóvel</h3>
-<p>Gestão estratégica com foco na valorização.</p>
-<button onclick="enviarZap('Locação e Conservação')">Solicitar</button>
-</div>
-
-<div class="card">
-<h3>Avaliação Imobiliária</h3>
-<p>Análise técnica precisa para seu patrimônio.</p>
-<button onclick="enviarZap('Avaliação Imobiliária')">Solicitar</button>
-</div>
-
-</div>
-</section>
-
-<section class="sobre" id="sobre">
-<h2>Sobre a Imovcare</h2>
-<p>
-A Imovcare foi criada pensando em oferecer comodidade e segurança para proprietários que desejam manter a integridade de seus imóveis locados.
-</p>
-<p class="creci">CRECI 227057</p>
-</section>
-
-<section class="contato" id="contato">
-<h2>Entre em Contato</h2>
-
-<form onsubmit="enviarFormulario(event)">
-<input type="text" id="nome" placeholder="Seu nome" required>
-<input type="email" id="email" placeholder="Seu email" required>
-<textarea id="mensagem" placeholder="Digite sua mensagem" required></textarea>
-<button type="submit">Enviar pelo WhatsApp</button>
-</form>
-
-</section>
-
-<script>
-
-/* SLIDER */
-
-const imagens = [
-"slide1.jpg",
-"slide2.jpg",
-"slide3.jpg",
-"slide4.jpg"
-];
-
-let i = 0;
-const hero = document.getElementById("hero");
-
-function trocarImagem(){
-hero.style.backgroundImage = `url(${imagens[i]})`;
-i = (i + 1) % imagens.length;
-}
-
-trocarImagem();
-setInterval(trocarImagem, 4000);
-
-/* WHATSAPP */
-
-function enviarZap(servico){
-let numero = "5511965624711";
-let mensagem = `Olá, gostaria de informações sobre ${servico}`;
-window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`);
-}
-
-function enviarFormulario(e){
-e.preventDefault();
-
-let numero = "5511965624711";
-let nome = document.getElementById("nome").value;
-let email = document.getElementById("email").value;
-let mensagem = document.getElementById("mensagem").value;
-
-let texto = `Olá, meu nome é ${nome}%0AEmail: ${email}%0A${mensagem}`;
-
-window.open(`https://wa.me/${numero}?text=${texto}`);
-}
-
-</script>
+  <!-- FOOTER -->
+  <footer class="px-6 py-10 bg-neutral-900 text-center text-neutral-500">
+    <p class="title gold">Marcelo Carvalho</p>
+    <p>CRECI 227057</p>
+    <p class="mt-2">© 2026 ImovCare</p>
+  </footer>
 
 </body>
 </html>
-
